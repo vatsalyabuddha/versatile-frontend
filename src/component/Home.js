@@ -71,19 +71,22 @@ const Home = () => {
     }
     const renderHome = () => {
         return (
-            <div className='home'>
+            <div className='app1'>
+                <div className='home'>
                 {/* {renderData()} */}
                 <h2 className='nav-head-main'> Insurance Verification Portal</h2>
                 {/* <h2> OR</h2>
                 <h2> Go To DashBoard</h2> */}
                 <div className='df-jc'>
-                    <div className='pad-10 mar-10'><Button btnText="Find Uninsured Vehicle" color="red" name="getRegNumData" click={changePage} /></div>
-                    <div className='pad-10 mar-10'><Button btnText="Dashboard Data" color="red" name="dashboard" click={(e)=>changePage(e)} /></div>
+                    <div className=' mar-B10 mar-T10'><Button btnText="Find Uninsured Vehicle" color="red" name="getRegNumData" click={changePage} /></div>
+                    <div className=' mar-B10 mar-T10'><Button btnText="Dashboard Data" color="red" name="dashboard" click={(e)=>changePage(e)} /></div>
                 </div>
                 <div className='df-jc'>
-                    <div className='pad-10 mar-10'><Button btnText="Data Filters" color="red" name="database" click={(e)=>changePage(e)} /></div>
+                    <div className=' mar-B10 mar-T10'><Button btnText="Data Filters" color="red" name="database" click={(e)=>changePage(e)} /></div>
                     {/* <div className='pad-10 mar-10'><Button btnText="Expiry Data" color="red" name="expData" click={(e)=>changePage(e)} /></div> */}
                 </div>
+                </div>
+                
             </div>
         )
     }

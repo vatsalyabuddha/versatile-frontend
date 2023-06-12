@@ -5,16 +5,11 @@ import Table from './Table'
 import configs from './configs'
 import axios from 'axios'
 import Button from './Button'
+import common from '../common'
 
 const Dashboard = (props) => {
 
     let [data, setData] = useState([])
-
-    const renderTop = () => {
-        return (
-            <div>renderTop</div>
-        )
-    }
 
     useEffect(()=>{
         let url = `${configs.regIDurl}/api/total-reg-checked`;
@@ -26,8 +21,6 @@ const Dashboard = (props) => {
           })
           .catch(function (error) {
             console.log(error);
-            // serError("Sorry No Data is available")
-           
           });
 
     },[])
@@ -53,8 +46,8 @@ const Dashboard = (props) => {
             { label: "Unique Vehicles", number: data.length },
             { label: "Insured Vehicles", number: insuredVehicle.length },
             { label: "Uninsured Vehicles", number: unInsuredVehicle.length },
-            { label: "Vehicle Category", number: getArrByList("maker_model") && getArrByList("maker_model").length },
-            { label: "Different Location", number: getArrByList("rto_name") && getArrByList("rto_name").length },
+            { label: "Make Model", number: getArrByList("maker_model") && getArrByList("maker_model").length },
+            { label: "RTO", number: getArrByList("rto_name") && getArrByList("rto_name").length },
         ]
         return (
             <div className='Dashboardmiddle'>
@@ -63,34 +56,13 @@ const Dashboard = (props) => {
             </div>
         )
     }
-    const getMonth=(num)=>{
-        switch(num){
-            case 0: return "Jan";
-            case 1: return "Feb";
-            case 2: return "Mar";
-            case 3: return "Apr";
-            case 4: return "May";
-            case 5: return "Jun";
-            case 6: return "Jul";
-            case 7: return "Aug";
-            case 8: return "Sep";
-            case 9: return "Oct";
-            case 10: return "Nov";
-            case 11: return "Dec";
-            default: return "Aug"
-
-        }
-    }
 
     const getMonthArrByList=(key)=>{
-       
         let filterd = data.filter(item=>item.insurance_upto && item.insurance_upto.slice(5, 7) === key )
-        
         return filterd.length
     }
 
     const renderBottom = () => {
-
          let tileData = [
             { label: "Jan", number: getMonthArrByList("01") },
             { label: "Feb", number: getMonthArrByList("02") },
@@ -108,12 +80,10 @@ const Dashboard = (props) => {
         ]
 
         let date = new Date();
-        console.log(date.getMonth());
-        let month = getMonth(date.getMonth())
+        let month = common.getMonth(date.getMonth())
         return (
-            <div className='bottom'>
-                <div className='df-jc head'><h2>Month Wise Expiry Data </h2>
-                {/* <span>Last updated : 5/9/22</span> */}
+            <div className='bottom' style={{background:'white'}}>
+                <div className='df-jc head dashboardHeading mar-B10 mar-T10'><h2>Month Wise Expiry Data </h2>
                 </div>
                 <div className='Dashboardmiddle'>
                     <div className='box-con'>{tileData.map((item, i) => i<6 && <Box label={item.label} id={item.label} number={item.number} color="green" red={item.label === month} />)}</div>
@@ -125,14 +95,11 @@ const Dashboard = (props) => {
 
 
     return (
-        <div>
-            <h1 className='center dash-head'>Dashboard</h1>
-            {/* {renderTop()} */}
+        <div className='dashboardID'>
+            <h1 className=' dash-head mar-L10 dashboardHeading'>Dashboard</h1>
             {renderMiddle()}
             {renderBottom()}
-            <div>
-                <Table data={data}/>
-            </div>
+            {/* <div><Table data={data}/></div> */}
             <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
         </div>
     )

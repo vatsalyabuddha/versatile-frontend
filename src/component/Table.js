@@ -5,6 +5,8 @@ const Table = (props) => {
 
     const data = props.data;
 
+    
+
     const getStatus=(status)=>{
         switch(status){
             case -1: return "UnInsured"; 
@@ -26,13 +28,14 @@ const Table = (props) => {
     <th>Insurance Exp. Date</th>
   </tr>
   {data.map((item, i)=>{
+    let css1 = getStatus(item.insurance_status)==="UnInsured" ? "red":""
     return(
         <tr>
-    <td>{item.registration_number}</td>
-    <td>{item.created_date && item.created_date.slice(0, 10)}</td>
-    <td>{item.rto_city_name}</td>
-    <td className={`${getStatus(item.insurance_status)==="UnInsured" && "red"}`}>{getStatus(item.insurance_status)}</td>
-    <td>{item.insurance_upto && item.insurance_upto.slice(0, 10)}</td>
+    <td className={css1}>{item.registration_number}</td>
+    <td className={css1}>{item.created_date && item.created_date.slice(0, 10)}</td>
+    <td className={css1}>{item.rto_city_name}</td>
+    <td className={css1}>{getStatus(item.insurance_status)}</td>
+    <td className={css1}>{item.insurance_upto && item.insurance_upto.slice(0, 10)}</td>
   </tr>
     )
   })}
