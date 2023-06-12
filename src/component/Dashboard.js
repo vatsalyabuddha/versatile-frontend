@@ -111,8 +111,8 @@ const Dashboard = (props) => {
         console.log(date.getMonth());
         let month = getMonth(date.getMonth())
         return (
-            <div className='bottom'>
-                <div className='df-jc head'><h2>Month Wise Expiry Data </h2>
+            <div className='bottom' style={{background:'white'}}>
+                <div className='df-jc head dashboardHeading mar-B10 mar-T10'><h2>Month Wise Expiry Data </h2>
                 {/* <span>Last updated : 5/9/22</span> */}
                 </div>
                 <div className='Dashboardmiddle'>
@@ -125,8 +125,9 @@ const Dashboard = (props) => {
 
 
     return (
-        <div>
-            <h1 className='center dash-head'>Dashboard</h1>
+        <div className='dashboardID'>
+            {/* <div className='insuranceLogo'></div> */}
+            <h1 className=' dash-head mar-L10 dashboardHeading'>Dashboard</h1>
             {/* {renderTop()} */}
             {renderMiddle()}
             {renderBottom()}
