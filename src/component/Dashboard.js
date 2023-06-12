@@ -53,8 +53,8 @@ const Dashboard = (props) => {
             { label: "Unique Vehicles", number: data.length },
             { label: "Insured Vehicles", number: insuredVehicle.length },
             { label: "Uninsured Vehicles", number: unInsuredVehicle.length },
-            { label: "Vehicle Category", number: getArrByList("maker_model") && getArrByList("maker_model").length },
-            { label: "Different Location", number: getArrByList("rto_name") && getArrByList("rto_name").length },
+            { label: "Make Model", number: getArrByList("maker_model") && getArrByList("maker_model").length },
+            { label: "RTO", number: getArrByList("rto_name") && getArrByList("rto_name").length },
         ]
         return (
             <div className='Dashboardmiddle'>
