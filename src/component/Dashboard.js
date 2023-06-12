@@ -83,14 +83,11 @@ const Dashboard = (props) => {
     }
 
     const getMonthArrByList=(key)=>{
-       
         let filterd = data.filter(item=>item.insurance_upto && item.insurance_upto.slice(5, 7) === key )
-        
         return filterd.length
     }
 
     const renderBottom = () => {
-
          let tileData = [
             { label: "Jan", number: getMonthArrByList("01") },
             { label: "Feb", number: getMonthArrByList("02") },
@@ -113,7 +110,6 @@ const Dashboard = (props) => {
         return (
             <div className='bottom' style={{background:'white'}}>
                 <div className='df-jc head dashboardHeading mar-B10 mar-T10'><h2>Month Wise Expiry Data </h2>
-                {/* <span>Last updated : 5/9/22</span> */}
                 </div>
                 <div className='Dashboardmiddle'>
                     <div className='box-con'>{tileData.map((item, i) => i<6 && <Box label={item.label} id={item.label} number={item.number} color="green" red={item.label === month} />)}</div>
@@ -126,14 +122,10 @@ const Dashboard = (props) => {
 
     return (
         <div className='dashboardID'>
-            {/* <div className='insuranceLogo'></div> */}
             <h1 className=' dash-head mar-L10 dashboardHeading'>Dashboard</h1>
-            {/* {renderTop()} */}
             {renderMiddle()}
             {renderBottom()}
-            <div>
-                <Table data={data}/>
-            </div>
+            <div><Table data={data}/></div>
             <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
         </div>
     )
