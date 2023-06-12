@@ -49,18 +49,16 @@ const Database = (props) => {
 
     const renderTop = () => {
         return (
-            <div>
                 <div class="modal-content center">
-
-                    <div className='pad-20'>
+                    <div className='pad-20 dateRange'>
                         <h2>Please select a date range</h2>
                         <p>If you have checked yesterday then simply click on SUBMIT button</p>
-                        <div className='date df-jc'>
+                        <div className='date df-jc upload dateUpload'>
                             <div className='dateLine'>From<input type="date" name="date_to" value={input.to} onChange={handleChange} /></div>
                             <div className='dateLine'>To<input type="date" name="date_from" value={input.from} onChange={handleChange} /></div>
                         </div>
-                        <div className='df-jc'>
-                            <div className='pad-10 mar-10'><Button btnText="Submit" color="red" click={submit} /></div>
+                        <div className='df-jc '>
+                            <div className='pad-10 mar-10 redbtns'><Button btnText="Submit" color="red" click={submit} /></div>
                             <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
 
                             {/* <div className='pad-10 mar-10'><Button btnText="Go to Home" color="red" click={gotoHome} /></div> */}
@@ -71,7 +69,7 @@ const Database = (props) => {
                         </div> */}
                     </div>
                 </div>
-            </div>
+            
         )
     }
 

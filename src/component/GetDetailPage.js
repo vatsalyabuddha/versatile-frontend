@@ -104,13 +104,13 @@ const GetDetailPage = (props) => {
 
     const renderInputPopup = () => {
         return (
-            <div className='pad-20 upload'>
+            <div className='pad-20 upload uploadId'>
                 <h2>Kindly Fill the Registration Number</h2>
                 <div className='inputDiv'>
-                    <input type="text" value={redId} onChange={(e) => setRegId(e.target.value)} />
+                    <input className='pad-10' type="text" placeholder='Search Here ...' value={redId} onChange={(e) => setRegId(e.target.value)} />
                 </div>
-                <div className='df-jc'>
-                    <div className='pad-10 mar-10'><Button btnText="Submit" color="red" click={onRegSubmit} /></div>
+                <div className='df-jc redbtns'>
+                    <div className='mar-10'><Button btnText="Submit" color="red" click={onRegSubmit} /></div>
                     {/* <div className='pad-10 mar-10'><Button btnText="Close" color="red"  click={changePage} /></div> */}
                 </div>
             </div>
@@ -120,9 +120,9 @@ const GetDetailPage = (props) => {
 
     const renderRightBlock = () => {
         return (
-            <div className='SearchBlock'>
-                <div className='SearchBlock'>
-                    <div className='upload'>
+            <div className='SearchBlock searchBlockWrapper'>
+                <div className='SearchBlock '>
+                    <div className='upload searchId'>
                         <p>Search by Registration ID</p>
                         <div className='inputDoc'>
                             <input

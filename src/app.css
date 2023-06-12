@@ -1,32 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+list-style: none;
+text-decoration: none;
+}
+
 .app{
-    /* width: 100vw;
-    height: 100vh; */
-    background-color: #fafafa;
+background:#fff;
+border-radius: 16px;
+box-shadow: 0 0 20px rgb(0 0 0 / 8%);
+font-family: 'Courier New', Courier, monospace;
+display: flex;
+justify-content: center;
+align-items:center;
+margin: 50px auto 0;
+width: 900px;
+min-height: 600px;
+flex-direction: column;
+position: relative;
+top: 20px;
+}
+.dashboardID{
+padding: 30px;
+margin-top: 55px;
+}
+.dashboardID h1{
+margin: -15px 0 5px 0px;
+font-size: 24px;
+font-weight: 700;
+color: #333846;
+}
+.app1{
+    background: url(.//image/front-left-side-47.webp) no-repeat right bottom #fff;
+    border-radius: 16px;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 30px;
+    justify-content: start;
+    align-items:start;
+    width: 900px;
+    min-height: 600px;
+    flex-direction: column;
+    position: relative;
+    top: 20px;
+}
+.insuranceLogo{
+    width: 240px;
+    height: 50px;
+    background:url(../src/image/insuranceLogo.svg) no-repeat center;
+    position: absolute;
+    left: 28px;
+    top: 15px;
+    z-index: 9;
 }
 .red{background-color: #f34653;}
 .wrapper{
     width: auto;
     padding: 0;
-}
+ }
 .bold-600{
     font-weight: 600;
 }
 .button{
-    font-size: 15px;
-    height: 44px;
-    box-shadow: 0 8px 8px rgb(243 70 83 / 20%);
-    border-radius: 8px;
-    line-height: 1;
-    max-width: unset;
-    background: #f34653;
-    color: #fff;
-    border: aliceblue;
-    cursor: pointer;
-    padding: 15px;
+font-size: 15px;
+height: 44px;
+box-shadow: 0 8px 8px rgb(243 70 83 / 20%);
+border-radius: 8px;
+line-height: 1;
+max-width: unset;
+background: #f34653;
+color: #fff;
+border: aliceblue;
+cursor: pointer;
+padding: 15px;
 }
 .pad-5{padding: 5px;}
 .pad-10{padding: 10px;}
@@ -91,7 +142,9 @@
 .df-jc{
     display: flex;
     justify-content: center;
-}
+    flex-direction: column;
+    width: 100%;
+  }
 
 .insurDirectDetail{
     display: inline-block;
@@ -141,25 +194,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    margin-top: 15px;
 }
 
 
 /* CSS */
 .button-6 {
+  width: 100%;  
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.85);
+  color: #333846;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif; */
   font-size: 16px;
   font-weight: 600;
-  justify-content: center;
+  justify-content: start;
   line-height: 1.25;
   margin: 0;
   min-height: 3rem;
@@ -171,14 +226,14 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-  width: auto;
-}
+   }
 
 .button-6:hover,
 .button-6:focus {
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(0, 0, 0, 0.65);
+  color:#f34653;
+  
 }
 
 .button-6:hover {
@@ -288,11 +343,11 @@
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
 
     padding: 20px;
-    border: 1px solid #888;
-    /* width: 30%; 
+    /*border: 1px solid #888;
+     width: 30%; 
     height: 30%; */
     border-radius: 10px;
 
@@ -325,24 +380,41 @@
 }
 .inputDiv{
     padding: 10px;
-    margin: 10px;
-    border: 1px solid #e0e0e0;
+    margin: 10px auto;
+    width: 100%;
+    /*border: 1px solid #e0e0e0;*/
+}
+.redbtns button{
+    color: #fff;
+    width: 200px;
+    justify-content:center;
+    background: #f34653;
+}
+.redbtns button:hover{
+    color: #fff;
 }
 .inputDiv input{
     border: navajowhite;
-    width: 90%;
+    width: 100%;
     height: 35px;
-    font-size: 25px;
+    font-size: 13px;
     color: #4f4e4e;
-    text-align: center;
-    text-transform: uppercase;
+    text-align: left;
+    text-transform: none;
+    padding: 0 10px;
 }
+.inputDiv input:focus{
+border: 1px solid #4f4e4e;  
+outline: none;  
+}
+
 .SearchBlock{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+
 .SearchBlock .modal-content{
     /* width: 100vw;
     width: 100vh; */
@@ -352,12 +424,22 @@
     padding: 10px;
     display: flex;
     justify-content: center;
-}
-.SearchBlock .modal-content .date .dateLine{
+    border: 1px solid #e6e6e6;
     padding: 10px;
-    display: flex;
-    justify-content: end;
+    border-radius: 5px;
+    gap: 10px;
 }
+.dateRange h2, .dateRange p{
+ color: #333846;   
+}
+ .dateLine{
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 10px !important; 
+    width: 200px !important;
+    margin: 10px 0;
+   }
 
 .SearchBlock .modal-content .date .dateLine input{
     padding-left: 10px;
@@ -454,68 +536,120 @@ p {
     
 }
 .ai-c{align-items: center;}
+.searchBlockWrapper{
+margin-top: 25px;
 
+}
 .upload{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #7de7bb;
+    background-color: #f5faff;
+    border: 2px dashed #99ccff;
+}
+.dateUpload{
+width: 100% !important;
+margin: 0 !important;
+margin-top: 16px !important;
+}
+.uploadId h2{
+ color: #333846;
+font-size: 20px;
+margin-left: 15px;
+}
+.searchId p{
+ margin-left: -45px;
+ margin-bottom: 10px;
+ color: #333846; 
 }
 .Dashboardmiddle{
     padding: 10px;
-    margin: 10px;
-    border: 1px solid black;
+    /* margin: 10px; */
+    border: 1px solid #e4e4e4;
     border-radius: 10px;
-    width: 900px;
+    width: 100%;
+    color: #333846;
 }
 .Dashboardmiddle .box-con{
     display: flex;
+    flex-wrap: wrap;
     align-items: end;
     justify-content: center;
 
+}
+.Dashboardmiddle .box-con .mainBox{
+    width: 30%;
+}
+.dashboardHeading{
+color: #333846;
 }
 .tileBox{
     padding: 10px;
     margin: 10px;
     text-align: center;
+    box-shadow: 0 6px 12px 0 rgb(51 56 70 / 10%);
+    cursor: pointer;
+    background:#fff;
+    border-radius: 8px;
 }
+.tileBox:hover{
+box-shadow: 0 6px 12px 0 rgba(202, 101, 101, 0.219);  
+}
+
 .box{
     padding: 10px;
     margin: 10px;
     font-size: 30px;
-    background-color: #AB8FB9;
+    background-color: #dbe9f5;
     border-radius: 5px;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 .Dashboardend{
-
+font-size: 16px;
+font-weight: 600;
+color: #333846;
 }
 .border-none{
     border: none;
 }
-
+.green.currentmonth{
+    background: #f34653;
+    color: #fff;
+    border: 0;
+}
 .green{
-    background-color: #9CB98F;
-    padding: 20px 30px;
+    background-color: #fff;
+    border: 2px solid #e4e4e4;
+ 
 }
 .bottom h2 span{
     text-align: end;
     font-size: 15px;
 }
 .bottom .head{
-    align-items: center;
-    justify-content: space-evenly;
+    align-items:start;
+    justify-content: start;
+   font-size: 16px;
+font-weight: 600;
 }
 .redBG{
-    background-color: #CA5D4E;
+    background-color: #fff;
+    border: 2px solid rgb(0 0 0 / 10%);
+    color: #333846;
+    width: 150px;
+    justify-content: center;
+}
+.redBG:hover{ color: #f34653;
+        box-shadow: 0  4px 20px rgb(0 0 0 / 10%);
 }
 .upload{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     border-radius: 10px;
     margin: 10px ;
     padding: 20px ;
-}
+    width: 90%;
+ }
+
 .upload input{
     border: 1px solid #e6e6e6;
     padding: 10px;
@@ -530,7 +664,9 @@ p {
 .mainUser .lower{
 
 }
+.modalCenter{
 
+}
 .mainUser .lower .lineUser{
     padding: 5px;
     margin: 5px;
@@ -564,11 +700,32 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    border-radius: 8px
   }
   
   #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
+  }
+  #customers tr:before {
+    content: '';
+    height: 1px;
+    width: 0;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .8s;
+    
+  }
+  #customers tr:hover {
+    color: white;
+    transform: translateX(0px);
+  }
+  #customers tr:hover::before{
+    width: 100%;
   }
   
   #customers tr:nth-child(even){background-color: #f2f2f2;}
@@ -579,17 +736,21 @@ p {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #9CB98F;
+    background-color: #333846;
     color: white;
   }
   .nav-head-main{
-      background-color: #AB8FB9;
-      padding: 20px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+    /* padding:0 20px; */
+    color: #333846;
   }
-
+/*
   .dash-head{
       background-color: #7de7bb;
       padding: 40px;
   }
-
+*/
   /* =========== end table-------------- */
+  

@@ -8,10 +8,10 @@ const Box = (props) => {
         <div className='mainBox'>
             <div className='tileBox'>
                 <div><strong>{props.label}</strong></div>
-                <div className={`box ${props.color && props.color } ${props.red && "redBG" }`}>{props.number}</div>
+                <div className={`box ${props.color && props.color } ${props.red && "currentmonth" }`}>{props.number}</div>
             </div>
         </div>
     )
 }
-// test
+
 export default Box
