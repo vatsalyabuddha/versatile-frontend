@@ -5,16 +5,11 @@ import Table from './Table'
 import configs from './configs'
 import axios from 'axios'
 import Button from './Button'
+import common from '../common'
 
 const Dashboard = (props) => {
 
     let [data, setData] = useState([])
-
-    const renderTop = () => {
-        return (
-            <div>renderTop</div>
-        )
-    }
 
     useEffect(()=>{
         let url = `${configs.regIDurl}/api/total-reg-checked`;
@@ -26,8 +21,6 @@ const Dashboard = (props) => {
           })
           .catch(function (error) {
             console.log(error);
-            // serError("Sorry No Data is available")
-           
           });
 
     },[])
@@ -63,24 +56,6 @@ const Dashboard = (props) => {
             </div>
         )
     }
-    const getMonth=(num)=>{
-        switch(num){
-            case 0: return "Jan";
-            case 1: return "Feb";
-            case 2: return "Mar";
-            case 3: return "Apr";
-            case 4: return "May";
-            case 5: return "Jun";
-            case 6: return "Jul";
-            case 7: return "Aug";
-            case 8: return "Sep";
-            case 9: return "Oct";
-            case 10: return "Nov";
-            case 11: return "Dec";
-            default: return "Aug"
-
-        }
-    }
 
     const getMonthArrByList=(key)=>{
         let filterd = data.filter(item=>item.insurance_upto && item.insurance_upto.slice(5, 7) === key )
@@ -105,8 +80,7 @@ const Dashboard = (props) => {
         ]
 
         let date = new Date();
-        console.log(date.getMonth());
-        let month = getMonth(date.getMonth())
+        let month = common.getMonth(date.getMonth())
         return (
             <div className='bottom' style={{background:'white'}}>
                 <div className='df-jc head dashboardHeading mar-B10 mar-T10'><h2>Month Wise Expiry Data </h2>
