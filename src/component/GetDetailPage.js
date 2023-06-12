@@ -121,7 +121,7 @@ const GetDetailPage = (props) => {
     const renderRightBlock = () => {
         return (
             <div className='SearchBlock searchBlockWrapper'>
-                <div className='SearchBlock '>
+                <div className='SearchBlock  searchBlockBox'>
                     <div className='upload searchId'>
                         <p>Search by Registration ID</p>
                         <div className='inputDoc'>

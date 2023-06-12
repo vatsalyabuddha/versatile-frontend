@@ -41,7 +41,7 @@ const Database = (props) => {
 
     const renderDropDown = (list, title="Select")=>{
         return (
-            <div>
+            <div className='dateLine'>
                 <label for="cars">{title}:</label>
                 <select name="cars" id="cars">
                     {list.map((item)=><option value="volvo" id={item.key} on>{item.value}</option>)}
@@ -59,7 +59,7 @@ const Database = (props) => {
     const renderTop = () => {
         return (
                 <div class="modal-content center">
-                    <div className='pad-20 dateRange'>
+                    <div className=' dateRange'>
                         <h2>Please select a date range</h2>
                         <p>If you have checked yesterday then simply click on SUBMIT button</p>
                         <div className='date df-jc upload dateUpload'>

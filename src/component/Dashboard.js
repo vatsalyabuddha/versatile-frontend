@@ -99,7 +99,7 @@ const Dashboard = (props) => {
             <h1 className=' dash-head mar-L10 dashboardHeading'>Dashboard</h1>
             {renderMiddle()}
             {renderBottom()}
-            <div><Table data={data}/></div>
+            {/* <div><Table data={data}/></div> */}
             <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
         </div>
     )

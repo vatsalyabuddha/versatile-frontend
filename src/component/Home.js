@@ -73,7 +73,6 @@ const Home = () => {
         return (
             <div className='app1'>
                 <div className='home'>
-                {/* <div className='insuranceLogo'></div> */}
                 {/* {renderData()} */}
                 <h2 className='nav-head-main'> Insurance Verification Portal</h2>
                 {/* <h2> OR</h2>
