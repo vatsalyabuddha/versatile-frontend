@@ -53,7 +53,7 @@ color: #007fff;
 .listWrapper{
 display: flex;
 gap: 33px;
-justify-content: space-around;
+justify-content: space-between;
 width: 90% !important;
 flex-direction: row !important;
 align-items: start !important;
@@ -291,6 +291,7 @@ margin-top: 15px;
   justify-content: space-evenly;
   flex-direction: column;
   margin-left: 13px;
+  margin-top: 10px;
 }
 .insurStatus ul li{
   list-style:disc;
@@ -523,8 +524,9 @@ color: #333846;
 display: flex !important;
 justify-content: space-between !important;
 align-items: start !important;
-width: 300px !important;
+width: 100% !important;
 margin: 10px 0;
+gap: 10px;
 }
 .dateLine select{
 border: 1px solid #e6e6e6;
@@ -639,6 +641,7 @@ margin-top: 0px;
 .searchBlockBox{
 flex-direction: row !important;  
 gap: 18px;
+margin-top: 15px;
 }
 .searchBlockBox .searchId,  .searchBlockBox .uploadId {
 height: 250px;
@@ -660,8 +663,7 @@ margin: 0 !important;
 margin-top: 16px !important;
 flex-direction: row;
 flex-wrap: wrap;
-gap: 0px 100px;
-justify-content: start !important;
+justify-content: space-between !important;
 }
 .uploadId h2{
 color: #333846;
@@ -749,8 +751,9 @@ font-weight: 600;
 background-color: #fff;
 border: 2px solid rgb(0 0 0 / 10%);
 color: #333846;
-width: 150px;
+width: 200px;
 justify-content: center;
+margin-top: -15px;
 }
 .redBG:hover{ color: #f34653;
 box-shadow: 0  4px 20px rgb(0 0 0 / 10%);
@@ -762,12 +765,30 @@ margin: 10px auto;
 padding: 20px ;
 width: 90%;
 }
-
+.noData{
+  background: url(../src/image/nodata.svg) no-repeat center #fff;
+  width:600px;
+  height: 425px;
+  /* border: 1px solid #333846; */
+  box-shadow: 0 6px 12px 0 rgb(51 56 70 / 10%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:110px 50px;
+  background-size: 100%;
+  }
 .upload input{
 border: 1px solid #e6e6e6;
-padding: 7px;
+padding: 10px;
 border-radius: 5px;
 background: #fff;
+}
+.mainUser .lower .lineUser .left, .mainUser .lower .lineUser .right{
+  width: 200px;
+}
+.mainUser .lower{
+margin-left: 70px;  
 }
 .myModalUserdata{
 
