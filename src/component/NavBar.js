@@ -9,6 +9,8 @@ const NavBar = () => {
         switch(id) {
             case "": 
             window.location.href = "/"; break;
+            case "search": 
+            window.location.href = "/getRegNumData"; break;
             case "dashboard": 
             window.location.href = "/dashboard"; break;
             case "database": 
@@ -26,6 +28,9 @@ const NavBar = () => {
                 <ul>
                     <li>
                         <div id="" onClick={openPage}>Home</div>
+                    </li>
+                    <li>
+                        <div id="search" onClick={openPage}>Search</div>
                     </li>
                     <li>
                         <div id="dashboard" onClick={openPage}>DashBoard</div>

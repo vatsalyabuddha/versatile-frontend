@@ -171,6 +171,10 @@ const GetDetailPage = (props) => {
             { key: "Registration Number", value: userData.registration_number },
             { key: "Registration Date", value: userData.registration_date.slice(0,10 ) },
             { key: "Insurance Up-to", value: userData.insurance_upto.slice(0,10 ) },
+            { key: "Model", value: userData.maker_model },
+            { key: "Engine No.", value: userData.engine_number },
+            { key: "Chassis No.", value: userData.chassis_number },
+            { key: "Insurer", value: userData.insurer },
         ]
         return (
             <div className='mainUser upload'>
