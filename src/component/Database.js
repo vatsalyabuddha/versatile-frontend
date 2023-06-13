@@ -41,7 +41,7 @@ const Database = (props) => {
         return (
             <div className='dateLine'>
                  <label for={slug}>{title}</label>
-                 <select name={slug} id={slug} onChange={(e)=>{handleChange(e)}}>
+                 <select name={slug} id={slug} value={input[slug]} onChange={(e)=>{handleChange(e)}}>
                 {list.map((item) => <option value={item.value} id={item.value} onClick={()=>setDropdown(slug,item.key )}>{item.key}</option>)}
                 </select>
             </div>
@@ -96,7 +96,15 @@ const Database = (props) => {
         hitFilterAPI()
     }
     const reset = () => {
-        setInput({})
+      
+        data={}
+        data.state = ""
+        data.brand = ""
+        data.fuel_type = ""
+        data.date_to = ""
+        data.date_from = ""
+        data.is_insured = ""
+        setInput(data);
     }
 
 
