@@ -76,7 +76,7 @@ const GetDetailPage = (props) => {
         console.log(e)
         console.log(e.target.files);
         // const config = { headers: { 'Content-Type': 'multipart/form-data' } };
-        let url = `${configs.regIDurl}/api/init-process`;
+        let url = `${configs.regIDurl}/api/process-reg`;
         let key = "number_plate_image";
         let uploadData = new FormData();
         uploadData.append(key, e.target.files[0])
@@ -107,7 +107,7 @@ const GetDetailPage = (props) => {
         setUserData("")
         serError("")
         showloader();
-        let url = `${configs.regIDurl}/api/init-process`;
+        let url = `${configs.regIDurl}/api/process-reg`;
         
         axios.post(url, {
             regNumber: redId
@@ -130,12 +130,12 @@ const GetDetailPage = (props) => {
     const renderInputPopup = () => {
         return (
             <div className='pad-20 upload uploadId'>
-                <h2>Kindly Fill the Registration Number</h2>
+                <h2>Search by Registration Number</h2>
                 <div className='inputDiv'>
                     <input className='pad-10' type="text" placeholder='Search Here ...' value={redId} onChange={(e) => setRegId(e.target.value)} />
                 </div>
                 <div className='df-jc redbtns'>
-                    <div className='mar-10'><Button btnText="Submit" color="red" click={onRegSubmit} /></div>
+                    <div className='mar-10 redbtns'><Button btnText="Submit" color="red" click={onRegSubmit} /></div>
                     {/* <div className='pad-10 mar-10'><Button btnText="Close" color="red"  click={changePage} /></div> */}
                 </div>
             </div>
@@ -148,7 +148,7 @@ const GetDetailPage = (props) => {
             <div className='SearchBlock searchBlockWrapper'>
                 <div className='SearchBlock  searchBlockBox'>
                     <div className='upload searchId'>
-                        <p>Search by Registration ID</p>
+                        <p>Search by Number Plate <br />(Image)</p>
                         <div className='inputDoc'>
                             <input
                                 type="file"
@@ -250,6 +250,7 @@ const GetDetailPage = (props) => {
         return (
             <div className='df-jsb top'>
                 {/* <div className='left'>{renderLeftBlock()}</div> */}
+                
                 <div className='right'>{renderRightBlock()}</div>
             </div>
         )
@@ -264,7 +265,14 @@ const GetDetailPage = (props) => {
     return (
         <div>
             <NavBar />
-            <div className='app'>
+            <div className='app insuranceStatusBox'>
+              <div className='insurStatus'>
+                 <h2> Search insurance status from Vehicle Reg Number </h2>   
+                <ul>
+                    <li>Enter the Registration Number</li>
+                    <li>Click on Submit to check the Insurance status</li>
+                </ul>
+                </div>
                 {renderTop()}
                 {/* {renderBottom()} */}
                 {renderUserPopup()}

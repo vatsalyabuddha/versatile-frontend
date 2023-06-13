@@ -14,18 +14,32 @@ const Dashboard = (props) => {
     let [list, setList] = useState(false);
 
     useEffect(()=>{
-        let url = `${configs.regIDurl}/api/total-reg-checked`;
-        
-        axios.get(url)
-          .then(function (response) {
-            console.log(response);
-            setData(response.data);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+          hitFilterAPI(true)
 
     },[])
+
+    const hitFilterAPI=(isDefault=false)=>{
+        // let url = `${configs.regIDurl}/api/total-reg-checked`;
+        let url = `${configs.regIDurl}/api/vehicle-list`;
+        let data = {
+            filters :{
+                
+            }
+        }
+        if(isDefault){
+            data = {
+                filters: {}
+            }
+        }
+        axios.post(url, data)
+            .then(function (response) {
+                console.log(response);
+                setData(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
     let insuredVehicle = data.filter(item=> item.insurance_status>0);
     let unInsuredVehicle = data.filter(item=> item.insurance_status<0);
