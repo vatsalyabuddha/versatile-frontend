@@ -78,6 +78,15 @@ const Database = (props) => {
 
 
     const renderTop = () => {
+        let carBrands = common.carBrands;
+        const carBrandsArray = carBrands.map(brand => {
+            return { key: brand, value: brand };
+          });
+          let is_insuredArr = [
+            { key: "Select", value: "" },
+            { key: "Insured", value: 1 },
+            { key: "UnInsured", value: -1 },
+          ]
         return (
             <div class="modal-content center">
                 <div className='dateRange'>
@@ -89,7 +98,7 @@ const Database = (props) => {
                         {/* <div className='dateLine'>Insurance Upto<input type="text" name="insurance_upto" value={input.insurance_upto} onChange={handleChange} /></div> */}
                         {/* <div className='dateLine'>Registration Date<input type="date" name="registration_date" value={input.registration_date} onChange={handleChange} /></div> */}
                         {renderDropDown(common.state, "State")}
-                        {renderDropDown(common.brand, "Vehicle Brand")}
+                        {renderDropDown(carBrandsArray, "Vehicle Brand")}
                         {renderDropDown(common.fuel_type, "Fule Type")}
                     </div>
                     <div className='df-jc '>
