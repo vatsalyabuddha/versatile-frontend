@@ -270,7 +270,7 @@ const GetDetailPage = (props) => {
                 {renderUserPopup()}
                 {userData && renderUser()}
                 {error && <div className='warning center'>{error}</div>}
-                <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
+                {/* <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div> */}
             </div>
         </div>
     )
