@@ -135,7 +135,7 @@ const GetDetailPage = (props) => {
                     <input className='pad-10' type="text" placeholder='Search Here ...' value={redId} onChange={(e) => setRegId(e.target.value)} />
                 </div>
                 <div className='df-jc redbtns'>
-                    <div className='mar-10'><Button btnText="Submit" color="red" click={onRegSubmit} /></div>
+                    <div className='mar-10 redbtns'><Button btnText="Submit" color="red" click={onRegSubmit} /></div>
                     {/* <div className='pad-10 mar-10'><Button btnText="Close" color="red"  click={changePage} /></div> */}
                 </div>
             </div>
@@ -265,9 +265,9 @@ const GetDetailPage = (props) => {
     return (
         <div>
             <NavBar />
-            <div className='app'>
-            <div>
-                Search insurance status from Vehicle Reg Number
+            <div className='app insuranceStatusBox'>
+              <div className='insurStatus'>
+                 <h2> Search insurance status from Vehicle Reg Number </h2>   
                 <ul>
                     <li>Enter the Registration Number</li>
                     <li>Click on Submit to check the Insurance status</li>
