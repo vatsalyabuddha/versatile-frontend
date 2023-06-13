@@ -722,6 +722,9 @@ color: #333846;
 .border-none{
 border: none;
 }
+.inputDoc{
+  margin: 10px auto;
+}
 .green.currentmonth{
 background: #f34653;
 color: #fff;
