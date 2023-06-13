@@ -92,7 +92,16 @@ const GetDetailPage = (props) => {
           .then(function (response) {
             console.log(response);
             removeLoader()
-            setUserData(response.data);
+
+            let response1 = response.data
+                removeLoader()
+                if(response1.status){
+                    setUserData(response1.data);
+                } else if (!response1.status){
+                    serError(response1.message)
+                } else{
+                    serError("Sorry No Data is available")
+                }
           })
           .catch(function (error) {
             console.log(error);
