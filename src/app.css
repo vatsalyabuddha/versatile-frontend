@@ -450,11 +450,19 @@ outline: none;
  .dateLine{
     display: flex !important;
     justify-content: space-between !important;
-    align-items: center !important;
-    gap: 10px !important; 
+    align-items: start !important;
     width: 200px !important;
     margin: 10px 0;
+    flex-direction: column;
    }
+   .dateLine select{
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    width: 150px;
+   }
+
 
 .SearchBlock .modal-content .date .dateLine input{
     padding-left: 10px;
@@ -577,6 +585,10 @@ gap: 18px;
 width: 100% !important;
 margin: 0 !important;
 margin-top: 16px !important;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 0px 100px;
+justify-content: start !important;
 }
 .uploadId h2{
  color: #333846;

@@ -42,7 +42,7 @@ const Database = (props) => {
     const renderDropDown = (list, title="Select")=>{
         return (
             <div className='dateLine'>
-                <label for="cars">{title}:</label>
+                <label for="cars">{title}</label>
                 <select name="cars" id="cars">
                     {list.map((item)=><option value="volvo" id={item.key} on>{item.value}</option>)}
                 </select>
@@ -65,8 +65,8 @@ const Database = (props) => {
                         <div className='date df-jc upload dateUpload'>
                             <div className='dateLine'>From<input type="date" name="date_to" value={input.to} onChange={handleChange} /></div>
                             <div className='dateLine'>To<input type="date" name="date_from" value={input.from} onChange={handleChange} /></div>
-                            <div className='dateLine'>Insurance Upto<input type="text" name="insurance_upto" value={input.insurance_upto} onChange={handleChange} /></div>
-                            <div className='dateLine'>Registration Date<input type="date" name="registration_date" value={input.registration_date} onChange={handleChange} /></div>
+                            {/* <div className='dateLine'>Insurance Upto<input type="text" name="insurance_upto" value={input.insurance_upto} onChange={handleChange} /></div>
+                            <div className='dateLine'>Registration Date<input type="date" name="registration_date" value={input.registration_date} onChange={handleChange} /></div> */}
                             {renderDropDown(common.state, "State")}
                             {renderDropDown(common.brand, "Vehicle Brand")}
                             {renderDropDown(common.fuel_type, "Fule Type")}
