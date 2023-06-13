@@ -1,5 +1,6 @@
 let common = {
     state:[
+        { "key": "Select", "value": "" },
         { "key": "Andhra Pradesh", "value": "AP" },
         { "key": "Arunachal Pradesh", "value": "AR" },
         { "key": "Assam", "value": "AS" },
@@ -41,6 +42,7 @@ let common = {
       ]
       ,
     brand :[
+        {key:"Seelct", value:""},
         {key:"Maruti", value:"Maruti"},
         {key:"Hyundai", value:"Hyundai"},
         {key:"Mahindra", value:"Mahindra"},
@@ -48,6 +50,7 @@ let common = {
         {key:"Toyota", value:"Toyota"},
     ],
     carBrands :[
+        "Select",
         "Maruti Suzuki",
         "Hyundai",
         "Tata Motors",
@@ -65,6 +68,7 @@ let common = {
         "Audi"
       ],
     fuel_type:[
+        {key:"Select", value:""},
         {key:"Petrol", value:"Petrol"},
         {key:"Diesel", value:"Diesel"},
         {key:"CNG", value:"CNG"},

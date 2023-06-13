@@ -55,20 +55,36 @@ const Database = (props) => {
         let url = `${configs.regIDurl}/api/vehicle-list`;
         let data = {
             filters :{
-                "state":input.state,
-                "make_name":input.make_name,
-                "fuel_type":input.fuel_type,
-                "date_to":input.to,
-                "date_from":input.from,
-                "is_insured" : input.is_insured
+                
             }
         }
+        if(input.state){
+            data.filters.state = input.state
+        }
+        if(input.make_name){
+            data.filters.make_name = input.make_name
+        }
+        if(input.fuel_type || input.fuel_type !== "Select"){
+            data.filters.fuel_type = input.fuel_type
+        }
+        if(input.date_to){
+            data.filters.date_to = input.date_to
+        }
+        if(input.date_from){
+            data.filters.date_from = input.date_from
+        }
+        if(input.is_insured){
+            data.filters.is_insured = input.is_insured
+        }
+
+
+
         if(isDefault){
             data = {
                 filters: {}
             }
         }
-        axios.get(url)
+        axios.post(url, data)
             .then(function (response) {
                 console.log(response);
                 setData(response.data);
@@ -112,7 +128,7 @@ const Database = (props) => {
                     </div>
                     <div className='df-jc '>
                         <div className={`pad-10 mar-10 redbtns ${disable?"disable":""}`}><Button btnText="Submit" color="red" click={submit} /></div>
-                        <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
+                        {/* <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div> */}
 
                         {/* <div className='pad-10 mar-10'><Button btnText="Go to Home" color="red" click={gotoHome} /></div> */}
                     </div>
