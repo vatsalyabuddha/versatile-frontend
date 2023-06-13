@@ -59,7 +59,7 @@ const Database = (props) => {
             data.filters.date_to = "2021-09-05"
             data.filters.date_from = "2021-09-05"
         }
-        axios.post(url, data)
+        axios.get(url)
             .then(function (response) {
                 console.log(response);
                 setData(response.data);
@@ -80,7 +80,7 @@ const Database = (props) => {
     const renderTop = () => {
         return (
             <div class="modal-content center">
-                <div className='pad-20 dateRange'>
+                <div className='dateRange'>
                     <h2>Please select a date range</h2>
                     <p>If you have checked yesterday then simply click on SUBMIT button</p>
                     <div className='date df-jc upload dateUpload'>
@@ -110,8 +110,10 @@ const Database = (props) => {
 
 
     return (
-        <div>
+        <div className='listWrapper app'>
+            <div className='navBar'>
             <NavBar />
+            </div>
             {renderTop()}
             <div><Table data={data} /></div>
         </div>

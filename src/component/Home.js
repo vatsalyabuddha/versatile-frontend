@@ -24,7 +24,7 @@ const Home = () => {
     }
     const renderHome1 = () => {
         return (
-            <div className='app1'>
+            <div className='app1 '>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
@@ -42,7 +42,7 @@ const Home = () => {
     }
     const renderHome = () => {
         return (
-            <div className='app1'>
+            <div className='app1 app'>
                  <div className='insuranceLogo'> <img src={insuranceLogo} alt="logo" /> </div>
                 <div className='home'>
                 <h2 className='nav-head-main'> Insurance Verification Portal</h2>

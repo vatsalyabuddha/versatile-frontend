@@ -89,7 +89,7 @@ const Dashboard = (props) => {
         let date = new Date();
         let month = common.getMonth(date.getMonth())
         return (
-            <div className='bottom' style={{background:'white'}}>
+            <div className='bottom app1' style={{background:'white'}}>
                 <div className='df-jc head dashboardHeading mar-B10 mar-T10'><h2>Month Wise Expiry Data </h2>
                 </div>
                 <div className='Dashboardmiddle'>
@@ -102,9 +102,11 @@ const Dashboard = (props) => {
 
 
     return (
-        <div className='dashboardID'>
+        <div className='dashboardID app'>
             <NavBar />
-            <h1 className=' dash-head mar-L10 dashboardHeading'>Dashboard</h1>
+            <div className='df-jc head dashboardHeading mar-B10 mar-T10'>
+            <h1>Dashboard</h1>
+            </div>
             {!list ? <Fragment>
                 {renderMiddle()}
                 {renderBottom()}

@@ -11,6 +11,7 @@ import Dashboard from "./component/Dashboard";
 import Database from "./component/Database";
 import NotFound from "./component/NotFound";
 import NavBar from "./component/NavBar";
+import GetDetailPage from "./component/GetDetailPage";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/database" element={<Database />} />
+        <Route exact path="/getRegNumData" element={<GetDetailPage />} />
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </Router>

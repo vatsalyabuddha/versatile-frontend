@@ -3,6 +3,7 @@ import Button from './Button'
 import configs from './configs'
 import Dropdown from './Dropdown'
 import axios from "axios"
+import NavBar from './NavBar'
 
 
 const GetDetailPage = (props) => {
@@ -230,7 +231,8 @@ const GetDetailPage = (props) => {
     // }
     return (
         <div>
-            <div>
+            <NavBar />
+            <div className='app'>
                 {renderTop()}
                 {/* {renderBottom()} */}
                 {renderUserPopup()}

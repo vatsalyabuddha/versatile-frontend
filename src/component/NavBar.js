@@ -22,7 +22,7 @@ const NavBar = () => {
     <div>
         <div className='insuranceLogo'> 
         <img src={insuranceLogo} alt="logo" /> 
-        <div className=''>
+        <div className='nbar'>
                 <ul>
                     <li>
                         <div id="" onClick={openPage}>Home</div>
