@@ -13,6 +13,7 @@ const GetDetailPage = (props) => {
     const [userData, setUserData] = useState("")
     const [loader, setLoader] = useState(false);
     const [error, serError] = useState("")
+    const [file, setFile] = useState("")
 
     const cityList = configs.cityList;
 
@@ -47,9 +48,29 @@ const GetDetailPage = (props) => {
         }, 3000);
     }
 
+    const uploadAPI=()=>{
+        let url = `${configs.regIDurl}/api/process-reg`;
+        axios({
+            method: "post",
+            url: url,
+            data: file,
+            headers: { "Content-Type": "multipart/form-data" },
+        })
+            .then(function (response) {
+                console.log(response);
+                removeLoader()
+                setUserData(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+                removeLoader();
+                serError("Sorry No Data is available")
+            });
+    }
+
     const onChangeFile = (e) => {
         setUserData("")
-        showloader()
+        // showloader()
         serError("")
 
         console.log(e)
@@ -59,25 +80,28 @@ const GetDetailPage = (props) => {
         let key = "number_plate_image";
         let uploadData = new FormData();
         uploadData.append(key, e.target.files[0])
-        axios({
-            method: "post",
-            url: url,
-            data: uploadData,
-            headers: { "Content-Type": "multipart/form-data" },
-        })
-            .then(function (response) {
-                //handle success
-                console.log(response);
-                removeLoader()
-                setUserData(response.data)
-            })
-            .catch(function (response) {
-                //handle error
-                console.log(response);
-                serError("Sorry No Data is available")
-                removeLoader()
-            });
+        setFile(uploadData)
+        // axios({
+        //     method: "post",
+        //     url: url,
+        //     data: uploadData,
+        //     headers: { "Content-Type": "multipart/form-data" },
+        // })
+        //     .then(function (response) {
+        //         //handle success
+        //         console.log(response);
+        //         removeLoader()
+        //         setUserData(response.data)
+        //     })
+        //     .catch(function (response) {
+        //         //handle error
+        //         console.log(response);
+        //         serError("Sorry No Data is available")
+        //         removeLoader()
+        //     });
     }
+
+
 
     const onRegSubmit = () => {
         setUserData("")
@@ -135,6 +159,9 @@ const GetDetailPage = (props) => {
                                 onChange={(e) => onChangeFile(e)} capture>
                             </input>
                         </div>
+                        <div className='df-jc redbtns'>
+                            <div className='mar-10'><Button btnText="Submit" color="red" click={uploadAPI} /></div>
+                        </div>
                     </div>
 
                     {renderInputPopup()}
@@ -166,8 +193,13 @@ const GetDetailPage = (props) => {
     }
 
     const renderUser = () => {
-       
 
+        if(!userData || !userData.registration_date || !userData.insurance_upto) {
+            console.log('error')
+            console.log(userData)
+            return
+        }
+       
         let data = [
             { key: "Owner Name", value: userData.owner_name },
             { key: "Registration Number", value: userData.registration_number },
