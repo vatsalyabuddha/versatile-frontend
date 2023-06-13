@@ -32,12 +32,17 @@ const Database = (props) => {
         }
     }
 
-    const renderDropDown = (list, title = "Select") => {
+    const setDropdown =(key, val)=>{
+        setInput(prev => ({ ...prev, [key]: val }));
+
+    }
+
+    const renderDropDown = (list, title = "Select", slug) => {
         return (
             <div className='dateLine'>
-                <label for="cars">{title}</label>
-                <select name="cars" id="cars">
-                    {list.map((item) => <option value="volvo" id={item.key} on>{item.value}</option>)}
+                 <label for={slug}>{title}</label>
+                 <select name={slug} id={slug} onChange={(e)=>{handleChange(e)}}>
+                {list.map((item) => <option value={item.value} id={item.value} onClick={()=>setDropdown(slug,item.key )}>{item.key}</option>)}
                 </select>
             </div>
         )
@@ -45,21 +50,36 @@ const Database = (props) => {
     }
 
     const hitFilterAPI=(isDefault=false)=>{
-        let url = `${configs.regIDurl}/api/total-reg-checked`;
+        let url = `${configs.regIDurl}/api/vehicle-list`;
         let data = {
             filters: {
-                state: input.state,
-                make_name: input.make_name,
-                fuel_type: input.fuel_type,
-                date_to: input.to,
-                date_from: input.from,
+               
             }
         }
-        if(isDefault){
-            data.filters.date_to = "2021-09-05"
-            data.filters.date_from = "2021-09-05"
+        if(input.state){
+            data.filters.state = input.state
         }
-        axios.get(url)
+        if(input.brand){
+            data.filters.make_name = input.brand
+        }
+        if(input.fuel_type){
+            data.filters.fuel_type = input.fuel_type
+        }
+        if(input.date_to){
+            data.filters.date_to = input.date_to
+        }
+        if(input.date_from){
+            data.filters.date_from = input.date_from
+        }
+        if(input.is_insured){
+            data.filters.is_insured = input.is_insured
+        }
+        if(isDefault){
+                data = {
+                    filters: {}
+                }
+        }
+        axios.post(url, data)
             .then(function (response) {
                 console.log(response);
                 setData(response.data);
@@ -75,6 +95,10 @@ const Database = (props) => {
         setDisable(true)
         hitFilterAPI()
     }
+    const reset = () => {
+        setInput({})
+    }
+
 
 
     const renderTop = () => {
@@ -97,13 +121,14 @@ const Database = (props) => {
                         <div className='dateLine'>To<input type="date" name="date_from" value={input.from} onChange={handleChange} /></div>
                         {/* <div className='dateLine'>Insurance Upto<input type="text" name="insurance_upto" value={input.insurance_upto} onChange={handleChange} /></div> */}
                         {/* <div className='dateLine'>Registration Date<input type="date" name="registration_date" value={input.registration_date} onChange={handleChange} /></div> */}
-                        {renderDropDown(common.state, "State")}
-                        {renderDropDown(carBrandsArray, "Vehicle Brand")}
-                        {renderDropDown(common.fuel_type, "Fule Type")}
+                        {renderDropDown(common.state, "State", "state")}
+                        {renderDropDown(carBrandsArray, "Vehicle Brand", "brand")}
+                        {renderDropDown(common.fuel_type, "Fule Type", "fuel_type")}
+                        {renderDropDown(is_insuredArr, "Insured/UnInsured", "is_insured")}
                     </div>
                     <div className='df-jc '>
                         <div className={`pad-10 mar-10 redbtns ${disable?"disable":""}`}><Button btnText="Submit" color="red" click={submit} /></div>
-                        <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
+                        <div className='pad-10 mar-10 center'><Button btnText="Reset" color="red" closeColor={true} click={reset} /></div>
 
                         {/* <div className='pad-10 mar-10'><Button btnText="Go to Home" color="red" click={gotoHome} /></div> */}
                     </div>
@@ -124,7 +149,9 @@ const Database = (props) => {
             <NavBar />
             </div>
             {renderTop()}
-            <div><Table data={data} /></div>
+
+            {data && data.length ?<div><Table data={data} /></div>:""}
+            {(!data || !data.length) ? <div className='center'><h2>No Data Found</h2></div> : "" }
         </div>
     )
 }

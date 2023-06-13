@@ -47,7 +47,7 @@ const Table = (props) => {
           <th>Captured Date</th>
           <th>RTO</th>
           <th>Make Model</th>
-          <th>Location</th>
+          <th>Fuel Type</th>
           <th>Insurance Status</th>
           <th>Insurance Exp. Date</th>
         </tr>
@@ -58,8 +58,8 @@ const Table = (props) => {
               <td className={css1}>{item.registration_number}</td>
               <td className={css1}>{item.created_date && item.created_date.slice(0, 10)}</td>
               <td className={css1}>{item.rto_city_name}</td>
-              <td className={css1}>{item.rto_city_name}</td>
-              <td className={css1}>{item.rto_city_name}</td>
+              <td className={css1}>{item.make_name}</td>
+              <td className={css1}>{item.fuel_type}</td>
               <td className={css1}>{getStatus(item.insurance_status)}</td>
               <td className={css1}>{item.insurance_upto && item.insurance_upto.slice(0, 10)}</td>
             </tr>
