@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Box from './Box'
 import Table from './Table'
 // import data from "./list.json"
@@ -6,10 +6,12 @@ import configs from './configs'
 import axios from 'axios'
 import Button from './Button'
 import common from '../common'
+import NavBar from './NavBar'
 
 const Dashboard = (props) => {
 
-    let [data, setData] = useState([])
+    let [data, setData] = useState([]);
+    let [list, setList] = useState(false);
 
     useEffect(()=>{
         let url = `${configs.regIDurl}/api/total-reg-checked`;
@@ -38,20 +40,25 @@ const Dashboard = (props) => {
         return arr
     }
 
-   
+   const updateParent=(listdata)=>{
+    setList(listdata)
+   }
+   const emptyList=()=>{
+    setList("")
+   }
 
     const renderMiddle = () => {
         let tileData = [
-            { label: "Total Vehicles", number: data.length },
-            { label: "Unique Vehicles", number: data.length },
-            { label: "Insured Vehicles", number: insuredVehicle.length },
-            { label: "Uninsured Vehicles", number: unInsuredVehicle.length },
-            { label: "Make Model", number: getArrByList("maker_model") && getArrByList("maker_model").length },
-            { label: "RTO", number: getArrByList("rto_name") && getArrByList("rto_name").length },
+            { label: "Total Vehicles", number: data },
+            { label: "Unique Vehicles", number: data },
+            { label: "Insured Vehicles", number: insuredVehicle },
+            { label: "Uninsured Vehicles", number: unInsuredVehicle },
+            { label: "Make Model", number: getArrByList("maker_model") && getArrByList("maker_model") },
+            { label: "RTO", number: getArrByList("rto_name") && getArrByList("rto_name") },
         ]
         return (
             <div className='Dashboardmiddle'>
-                <div className='box-con'>{tileData.map((item, i) => <Box label={item.label} id={item.label} number={item.number} />)}
+                <div className='box-con'>{tileData.map((item, i) => <Box label={item.label} id={item.label} number={item.number.length} data={item.number} updateParent={updateParent}/>)}
                 </div>
             </div>
         )
@@ -96,10 +103,14 @@ const Dashboard = (props) => {
 
     return (
         <div className='dashboardID'>
+            <NavBar />
             <h1 className=' dash-head mar-L10 dashboardHeading'>Dashboard</h1>
-            {renderMiddle()}
-            {renderBottom()}
-            {/* <div><Table data={data}/></div> */}
+            {!list ? <Fragment>
+                {renderMiddle()}
+                {renderBottom()}
+            </Fragment>:null}
+            {list && <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={emptyList} /></div>}
+            {list ? <Table data={list} /> : null}
             <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
         </div>
     )
