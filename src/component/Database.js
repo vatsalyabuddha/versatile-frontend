@@ -159,7 +159,7 @@ const Database = (props) => {
             {renderTop()}
 
             {data && data.length ?<div><Table data={data} /></div>:""}
-            {(!data || !data.length) ? <div className='center'><h2>No Data Found</h2></div> : "" }
+            {(!data || !data.length) ? <div className='center noData'></div> : "" }
         </div>
     )
 }
