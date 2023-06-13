@@ -28,10 +28,10 @@ const NavBar = () => {
                         <div id="" onClick={openPage}>Home</div>
                     </li>
                     <li>
-                        <div id="/dashboard" onClick={openPage}>DashBoard</div>
+                        <div id="dashboard" onClick={openPage}>DashBoard</div>
                     </li>
                     <li>
-                        <div id="/database" onClick={openPage}>Database</div>
+                        <div id="database" onClick={openPage}>Database</div>
                     </li>
                 </ul>
 

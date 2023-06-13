@@ -66,7 +66,7 @@ const Dashboard = (props) => {
 
     const getMonthArrByList=(key)=>{
         let filterd = data.filter(item=>item.insurance_upto && item.insurance_upto.slice(5, 7) === key )
-        return filterd.length
+        return filterd
     }
 
     const renderBottom = () => {
@@ -93,8 +93,8 @@ const Dashboard = (props) => {
                 <div className='df-jc head dashboardHeading mar-B10 mar-T10'><h2>Month Wise Expiry Data </h2>
                 </div>
                 <div className='Dashboardmiddle'>
-                    <div className='box-con'>{tileData.map((item, i) => i<6 && <Box label={item.label} id={item.label} number={item.number} color="green" red={item.label === month} />)}</div>
-                    <div className='box-con'>{tileData.map((item, i) => i>5 && <Box label={item.label} id={item.label} number={item.number} color="green" red={item.label === month} />)}</div>
+                    <div className='box-con'>{tileData.map((item, i) => i<6 && <Box label={item.label} id={item.label} data={item.number} number={item.number.length}  updateParent={updateParent} color="green" red={item.label === month} />)}</div>
+                    <div className='box-con'>{tileData.map((item, i) => i>5 && <Box label={item.label} id={item.label} data={item.number} number={item.number.length}  updateParent={updateParent} color="green" red={item.label === month} />)}</div>
                 </div>
             </div>
         )
@@ -113,7 +113,7 @@ const Dashboard = (props) => {
             </Fragment>:null}
             {list && <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={emptyList} /></div>}
             {list ? <Table data={list} /> : null}
-            <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div>
+            {/* <div className='pad-10 mar-10 center'><Button btnText="Back" color="red" closeColor={true} click={props.gotoHome} /></div> */}
         </div>
     )
 }
