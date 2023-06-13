@@ -47,16 +47,13 @@ const GetDetailPage = (props) => {
                 console.log('---------')
                 console.log(response);
                 removeLoader()
-                if(!response.status && response.message){
-                    serError(response.message)
-                } else if (!response.status){
-                    serError("Sorry No Data is available")
-                }
-                else if (response.message){
-                    serError("Sorry No Data is available")
-                }
-                 else {
+
+                if(response.status){
                     setUserData(response.data);
+                } else if (!response.status){
+                    serError(response.message)
+                } else{
+                    serError("Sorry No Data is available")
                 }
             })
             .catch(function (error) {
