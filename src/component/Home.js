@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import Button from './Button'
 import insuranceLogo from "../../src/image/insuranceLogo.svg"
+import filter from "../../src/image/Filter.png"
+import data from "../../src/image/data.png"
+import find from "../../src/image/find.png"
+
 
 import "../app.css"
 import GetDetailPage from './GetDetailPage'
@@ -47,11 +51,12 @@ const Home = () => {
                 <div className='home'>
                 <h2 className='nav-head-main'> Insurance Verification Portal</h2>
                 <div className='df-jc'>
-                    <div className=' mar-B10 mar-T10'><Button btnText="Find Uninsured Vehicle" color="red" name="getRegNumData" click={changePage} /></div>
-                    <div className=' mar-B10 mar-T10'><Button btnText="Dashboard Data" color="red" name="dashboard" click={(e)=>changePage(e)} /></div>
+                    <div className='extraMar'>
+                        <Button isIcon={find} btnText="Find Uninsured Vehicle" color="red qwe123" name="getRegNumData" click={changePage} /></div>
+                    <div className='extraMar'><Button  isIcon={data} btnText="Dashboard" color="red qwe123" name="dashboard" click={(e)=>changePage(e)} /></div>
                 </div>
                 <div className='df-jc'>
-                    <div className=' mar-B10 mar-T10'><Button btnText="Data Filters" color="red" name="database" click={(e)=>changePage(e)} /></div>
+                    <div className='extraMar'><Button  isIcon={filter} btnText="Filters" color="red qwe123" name="database" click={(e)=>changePage(e)} /></div>
                 </div>
                 </div>
                 

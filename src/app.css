@@ -904,6 +904,8 @@ font-weight: 700;
 /* padding:0 20px; */
 color: #333846;
 margin-top: -24px;
+margin: 0px 10px;
+    margin-bottom: 25px;
 }
 /*
 .dash-head{
@@ -912,3 +914,18 @@ padding: 40px;
 }
 */
 /* =========== end table-------------- */
+
+
+.extraMar{
+  margin-bottom: 30px;
+}
+
+.qwe123{
+  padding: 27px 29px;
+  border-radius: 0.7rem;
+}
+
+.iconImg{
+  width: 31px;
+    margin-right: 18px;
+}

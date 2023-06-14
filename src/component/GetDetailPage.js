@@ -219,7 +219,7 @@ const GetDetailPage = (props) => {
               <div className='insurStatus'>
                  <h2> Search insurance status from Vehicle Reg Number </h2>   
                 <ul>
-                    <li>Enter the Registration Number</li>
+                    <li>Enter Registration Number or Upload Number Plate photo</li>
                     <li>Click on Submit to check the Insurance status</li>
                 </ul>
                 </div>
