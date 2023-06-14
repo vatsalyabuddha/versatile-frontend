@@ -348,6 +348,19 @@ box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
 color: rgba(0, 0, 0, 0.65);
 transform: translateY(0);
 }
+.homeBack{
+width: 150px;  
+color: #f34653;
+margin-top: 20px;
+}
+
+.notFoundData p{
+  font-size: 20px;
+  font-weight: 700;
+  color: #333846;
+  
+}
+
 .line{
 padding: 1px;
 background-color: #e7e7e7;
@@ -801,6 +814,17 @@ margin-left: 70px;
 }
 .modalCenter{
 
+}
+.notFound{
+  background: url(https://i.imgur.com/qIufhof.png) no-repeat center 100px #fff;
+  width:100%;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  background-size: 50%;
+  margin: 0 auto;
+  padding-top: 100px;
 }
 .mainUser .lower .lineUser{
 padding: 5px;

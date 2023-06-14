@@ -10,13 +10,14 @@ import NavBar from './NavBar';
 const NotFound = () => {
     return <div>
         <NavBar />
-        <img src="https://i.imgur.com/qIufhof.png" />
-        <p style={{ textAlign: "center" }}>
-            <div>Sorry, This is not the page you’re looking for.</div>
-            <div style={{ textAlign: "center" }}>Error 404</div>
-            <div>It appears the page you seek doesn’t exist.</div>
-            <Link to="/">Go to Home </Link>
-        </p>
+        <div className='notFound'>
+         <div className='notFoundData' style={{textAlign:"center"}} >
+            <p>Sorry, This is not the page you’re looking for.</p>
+            <p style={{ textAlign: "center" }}>Error 404</p>
+            <p style={{fontSize:"16px", fontWeight:"400"}}>It appears the page you seek doesn’t exist.</p>
+            <Link className='button-6 homeBack' to="/">Go to Home </Link>
+           </div>
+       </div>
     </div>
 
 //     return(
