@@ -713,7 +713,7 @@ color: #333846;
 padding: 10px;
 margin: 10px;
 text-align: center;
-box-shadow: 0 6px 12px 0 rgb(51 56 70 / 10%);
+box-shadow: 0 6px 12px 0 rgb(51 56 70 / 25%);
 cursor: pointer;
 background:#fff;
 border-radius: 8px;
@@ -721,12 +721,11 @@ border-radius: 8px;
 .tileBox:hover{
 box-shadow: 0 6px 12px 0 rgba(202, 101, 101, 0.219);  
 }
-
 .box{
 padding: 10px;
 margin: 10px;
 font-size: 30px;
-background-color: #dbe9f5;
+background-color: #97b1a0;
 border-radius: 5px;
 }
 .Dashboardend{
@@ -745,11 +744,10 @@ background: #f34653;
 color: #fff;
 border: 0;
 }
-.green{
+/* .green{
 background-color: #fff;
 border: 2px solid #e4e4e4;
-
-}
+} */
 .bottom h2 span{
 text-align: end;
 font-size: 15px;
