@@ -348,6 +348,19 @@ box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
 color: rgba(0, 0, 0, 0.65);
 transform: translateY(0);
 }
+.homeBack{
+width: 150px;  
+color: #f34653;
+margin-top: 20px;
+}
+
+.notFoundData p{
+  font-size: 20px;
+  font-weight: 700;
+  color: #333846;
+  
+}
+
 .line{
 padding: 1px;
 background-color: #e7e7e7;
@@ -700,7 +713,7 @@ color: #333846;
 padding: 10px;
 margin: 10px;
 text-align: center;
-box-shadow: 0 6px 12px 0 rgb(51 56 70 / 10%);
+box-shadow: 0 6px 12px 0 rgb(51 56 70 / 25%);
 cursor: pointer;
 background:#fff;
 border-radius: 8px;
@@ -708,12 +721,11 @@ border-radius: 8px;
 .tileBox:hover{
 box-shadow: 0 6px 12px 0 rgba(202, 101, 101, 0.219);  
 }
-
 .box{
 padding: 10px;
 margin: 10px;
 font-size: 30px;
-background-color: #dbe9f5;
+background-color: #97b1a0;
 border-radius: 5px;
 }
 .Dashboardend{
@@ -732,11 +744,10 @@ background: #f34653;
 color: #fff;
 border: 0;
 }
-.green{
+/* .green{
 background-color: #fff;
 border: 2px solid #e4e4e4;
-
-}
+} */
 .bottom h2 span{
 text-align: end;
 font-size: 15px;
@@ -801,6 +812,17 @@ margin-left: 70px;
 }
 .modalCenter{
 
+}
+.notFound{
+  background: url(https://i.imgur.com/qIufhof.png) no-repeat center 100px #fff;
+  width:100%;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  background-size: 50%;
+  margin: 0 auto;
+  padding-top: 100px;
 }
 .mainUser .lower .lineUser{
 padding: 5px;
